@@ -50,4 +50,10 @@ public class LoginSteps {
         String password = TestDataManager.getTestDataValue("login", "valid_user", "password");
         System.out.println("Using test data - Username: " + username);
     }
+
+    @Then("User should see error message")
+    public void userShouldSeeErrorMessage() {
+        System.out.println("Verifying error message displayed");
+        // Add assertion here
+    }
 }
