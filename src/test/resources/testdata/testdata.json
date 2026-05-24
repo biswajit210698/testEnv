@@ -1,0 +1,39 @@
+{
+  "login": {
+    "valid_user": {
+      "username": "testuser@example.com",
+      "password": "Password@123",
+      "expected_result": "success"
+    },
+    "invalid_user": {
+      "username": "invalid@example.com",
+      "password": "WrongPassword",
+      "expected_result": "failure"
+    },
+    "empty_credentials": {
+      "username": "",
+      "password": "",
+      "expected_result": "error"
+    }
+  },
+  "registration": {
+    "new_user": {
+      "first_name": "John",
+      "last_name": "Doe",
+      "email": "johndoe@example.com",
+      "password": "TestPass@123",
+      "confirm_password": "TestPass@123",
+      "expected_result": "success"
+    }
+  },
+  "search": {
+    "valid_search": {
+      "search_query": "selenium automation",
+      "expected_results": "multiple"
+    },
+    "empty_search": {
+      "search_query": "",
+      "expected_results": "error"
+    }
+  }
+}
