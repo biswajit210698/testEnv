@@ -5,6 +5,7 @@ import io.cucumber.java.After;
 import org.openqa.selenium.WebDriver;
 import com.automation.drivers.DriverFactory;
 import com.automation.utils.ConfigManager;
+import com.automation.utils.ScreenshotUtil;
 
 /**
  * Cucumber Hooks for setup and teardown
@@ -16,6 +17,7 @@ public class Hooks {
         System.out.println("========== Test Execution Started ==========");
         System.out.println("Browser: " + ConfigManager.getBrowser());
         System.out.println("Base URL: " + ConfigManager.getBaseUrl());
+        System.out.println("Environment: " + ConfigManager.getEnvironment());
         
         WebDriver driver = DriverFactory.initializeDriver();
         driver.manage().timeouts().implicitlyWait(

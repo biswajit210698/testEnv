@@ -1,6 +1,7 @@
 package com.automation.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -72,7 +73,7 @@ public class BasePage {
     }
 
     /**
-     * Clear text field
+     * Clear text field and send keys
      */
     public void clearAndSendKeys(By locator, String text) {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
@@ -91,7 +92,7 @@ public class BasePage {
      * Wait for page to load
      */
     public void waitForPageLoad() {
-        wait.until(driver -> ((org.openqa.selenium.JavascriptExecutor) driver)
+        wait.until(driver -> ((JavascriptExecutor) driver)
                 .executeScript("return document.readyState").equals("complete"));
     }
 
@@ -107,5 +108,20 @@ public class BasePage {
      */
     public String getCurrentUrl() {
         return driver.getCurrentUrl();
+    }
+
+    /**
+     * Scroll to element
+     */
+    public void scrollToElement(By locator) {
+        WebElement element = driver.findElement(locator);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+    /**
+     * Refresh page
+     */
+    public void refreshPage() {
+        driver.navigate().refresh();
     }
 }

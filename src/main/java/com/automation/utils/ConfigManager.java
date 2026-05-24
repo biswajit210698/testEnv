@@ -85,4 +85,8 @@ public class ConfigManager {
     public static String getTestDataPath() {
         return getProperty("test.data.path", "src/test/resources/testdata/");
     }
+
+    public static String getEnvironment() {
+        return getProperty("environment", "dev");
+    }
 }
